@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivProfile"
+        android:layout_width="@dimen/size_64x"
+        android:layout_height="@dimen/size_64x"
+        android:layout_marginStart="@dimen/spacing_24x"
+        android:layout_marginTop="@dimen/spacing_24x"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@color/white_border" />
+
+    <TextView
+        android:id="@+id/tvFullName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_12x"
+        android:layout_marginTop="@dimen/spacing_8x"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/ivProfile"
+        app:layout_constraintTop_toTopOf="@id/ivProfile"
+        tools:text="Michael Strong" />
+
+    <TextView
+        android:id="@+id/tvUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_4x"
+        android:textColor="@color/gray_text"
+        app:layout_constraintStart_toStartOf="@id/tvFullName"
+        app:layout_constraintTop_toBottomOf="@id/tvFullName"
+        tools:text="michaelstrong" />
+
+
+    <TextView
+        android:id="@+id/tvBio"
+        android:layout_width="@dimen/size_0x"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_12x"
+        android:layout_marginEnd="@dimen/spacing_44x"
+        android:textColor="@color/gray_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvFullName"
+        app:layout_constraintTop_toBottomOf="@id/tvUsername"
+        tools:text="Android Engineer, learn is my passion ssssss " />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListRepository"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_0x"
+        android:layout_marginTop="@dimen/spacing_16x"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBio"
+        tools:listitem="@layout/item_repository"
+         />
+</androidx.constraintlayout.widget.ConstraintLayout>
